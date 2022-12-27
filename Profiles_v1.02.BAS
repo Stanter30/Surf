@@ -15,7 +15,7 @@ SurferApp.ScreenUpdating = 1
 		Set NumPasses = 4	       ' Number Passes Filter
 		Set SearchRad = 200	 ' Radius Search
 		Set axisVisible =1 		     	' On or Off Axes
-		Set Pickets = 1				' On or Off Pickets
+		Set Pickets = 1				' On or Off Pickets1
 		Set ShowColorScale =0	   ' On or Off Scale
 		Set OnFilter = 1				  ' On or Off Filter
 		Set OnBlank = 1				   ' On or Off Blanking
@@ -53,7 +53,7 @@ For Each vCell In WksHandle
 Next
 If xCol="" Then
 	Beep
-	MsgBox("Парамера Dist нет в таблице с данными!")
+	MsgBox("ГЏГ Г°Г Г¬ГҐГ°Г  Dist Г­ГҐГІ Гў ГІГ ГЎГ«ГЁГ¶ГҐ Г± Г¤Г Г­Г­Г»Г¬ГЁ!")
 	SurferApp.ScreenUpdating = 1
 	End
 End If
@@ -64,7 +64,7 @@ For Each vCell In WksHandle
 	   	MaxH = Wks.Columns(yCol).Statistics.Maximum
 	   	If MinHTest>MinH Then
 			Beep
-			MsgBox("Заданного MinH нет в таблице с данными!")
+			MsgBox("Г‡Г Г¤Г Г­Г­Г®ГЈГ® MinH Г­ГҐГІ Гў ГІГ ГЎГ«ГЁГ¶ГҐ Г± Г¤Г Г­Г­Г»Г¬ГЁ!")
 			SurferApp.ScreenUpdating = 1
 			End
 		End If
@@ -81,7 +81,7 @@ For Each vCell In WksHandle
 Next
 If zCol(1)=0 Then
 	Beep
-	MsgBox("Нет параметра "& Arr(1) &"либо Z в таблице")
+	MsgBox("ГЌГҐГІ ГЇГ Г°Г Г¬ГҐГІГ°Г  "& Arr(1) &"Г«ГЁГЎГ® Z Гў ГІГ ГЎГ«ГЁГ¶ГҐ")
 	SurferApp.ScreenUpdating = 1
 	End
 End If
@@ -146,12 +146,12 @@ End If
 If Len(Dir$(SourcePath & MinProf & ".bln*")) <> 0 Then
 	If Pickets = 1 And Len(Dir$(SourcePath & MinProf & ".txt*")) <> 0  Then
 		x=111
-		'Хрюк
+		'Г•Г°ГѕГЄ
 		ElseIf Pickets = 1 And Len(Dir$(SourcePath & MinProf & ".txt*")) = 0 Then
 			GoTo n
-			'Хрюк
+			'Г•Г°ГѕГЄ
 	End If
-	'Хрюк
+	'Г•Г°ГѕГЄ
 Else
     '''''''''''''''''''''''''''''''Nightmare''''''''''''''''''''''''''''''''''''''''
 n:
@@ -162,7 +162,7 @@ Debug.Print CCols
 Set WksRange = Wks.Cells(Row:=1,Col:=1,LastRow:=CRows,LastCol:=CCols)
 If ProfCol=Empty Then
 	Beep
-	MsgBox("Не задан профиль!")
+	MsgBox("ГЌГҐ Г§Г Г¤Г Г­ ГЇГ°Г®ГґГЁГ«Гј!")
 	SurferApp.ScreenUpdating = 1
 	End
 End If
@@ -283,10 +283,10 @@ j=1
 				Next
 			Axes(3).SetScale(FirstMajorTick:=MinH, LastMajorTick:=MaxH, MajorInterval:=MajorInterval)
 			Set title=SourcePath & Field(i) & Pr & ".grd"
-			Axes(1).Title = "Расстояние, м"
+			Axes(1).Title = "ГђГ Г±Г±ГІГ®ГїГ­ГЁГҐ, Г¬"
 			Axes(2).AxisLine.Style = "invisible"
-			Axes(2).Title = "Профиль "& Pr &""
-			Axes(3).Title = "Абсолютные отметки, м"
+			Axes(2).Title = "ГЏГ°Г®ГґГЁГ«Гј "& Pr &""
+			Axes(3).Title = "ГЂГЎГ±Г®Г«ГѕГІГ­Г»ГҐ Г®ГІГ¬ГҐГІГЄГЁ, Г¬"
 			For ax = 1 To 3
 				Axes(ax).TitleFont.Face = FontFace
 				Axes(ax).TitleFont.Size  = FontSize
